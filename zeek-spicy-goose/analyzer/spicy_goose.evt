@@ -1,0 +1,12 @@
+import spicy_GOOSE;
+import Zeek_spicy_GOOSE;
+
+packet analyzer spicy_GOOSE:
+    parse with spicy_GOOSE::GOOSEPacket;
+
+# TODO: Connect Spicy-side events with Zeek-side events. The example just
+# defines a simple example event that forwards the raw data (which in practice you
+# don't want to do!). In fact, you should consider just deleting this event if
+# you don't need it: For most packet analyzers, it's best to not do any
+# script-level work because the overhead could quickly become overwhelming.
+on spicy_GOOSE::GOOSEPacket -> event spicy_GOOSE::packet($packet, self.appid, self.pkt_len);

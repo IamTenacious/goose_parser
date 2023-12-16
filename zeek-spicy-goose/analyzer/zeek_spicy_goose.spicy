@@ -1,0 +1,8 @@
+# Zeek-specific Spicy logic.
+
+module Zeek_spicy_GOOSE;
+
+import spicy_GOOSE;
+import zeek;
+
+# TODO: Add anything you need here.

@@ -1,0 +1,10 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	weird
+#open	2023-12-16-14-47-21
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	name	addl	notice	peer	source
+#types	time	string	addr	port	addr	port	string	string	bool	string	string
+1216135243.118812	-	-	-	-	-	packet_error	Event parameter mismatch, cannot convert Spicy value of type 'string' to Zeek value of type 'count'	F	zeek	-
+#close	2023-12-16-14-47-21

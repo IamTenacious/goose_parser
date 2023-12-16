@@ -1,0 +1,20 @@
+# TODO: Define your analyzer here.
+
+module spicy_GOOSE;
+
+import zeek;
+
+# TODO: Our example here models a simple example packet format of static size:
+# 19 payload bytes, followed by the protocol number for the next layer, for
+# which the data then follows subsequently. (This is just what our test trace
+# happens to contain). Adapt as suitable.
+public type GOOSEPacket = unit {
+    appid: uint8;
+    pkt_len: uint16;
+    payload: bytes &eod;
+
+    on %done {
+        # Feed into Zeek's next-layer packet analysis.
+        zeek::forward_packet();
+    }
+};
